@@ -10,7 +10,7 @@ class Advert(models.Model):
     
     name = models.CharField(max_length=100, verbose_name='название')
     pub_date = models.DateField(auto_now_add=True, verbose_name='дата публикации')
-    author = models.ForeignKey(user, on_delete=models.CASCADE, verbose_name='автор')
+    author = models.ForeignKey(user, on_delete=models.CASCADE, verbose_name='автор', blank = True, null=True)
     text = models.TextField(verbose_name='описание')
     price = models.IntegerField(verbose_name='стоимость')
     photo = models.ImageField(upload_to='images', verbose_name='изображение')
